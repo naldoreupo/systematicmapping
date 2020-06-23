@@ -1,0 +1,32 @@
+
+ <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Search string
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+  
+      <mat-checkbox  [(ngModel)] ='spanish' (change)='getSearchString()'>Spanish</mat-checkbox>
+      <mat-checkbox   [(ngModel)] ='english' (change)='getSearchString()'>English</mat-checkbox>
+      <mat-card *ngFor="let searchString of searchStrings"  class="example-card"> 
+
+        <mat-card-header>
+          <mat-card-title>{{searchString.key}}</mat-card-title>
+        </mat-card-header>
+        <mat-divider></mat-divider>
+        <mat-card-content>
+          <p>
+            {{searchString.value}}
+          </p>
+        </mat-card-content>
+      </mat-card>
+
+
+    </mat-expansion-panel>
+  </mat-accordion>
+  
+
+
+
+

@@ -1,0 +1,8 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/5e0b06f8-d4fa-4aea-8ce6-187631d4a9db/resourceGroups/TesisRG/providers/Microsoft.Web/sites/TesisApp",
+    "appService.deploySubpath": "dist\\App",
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ]
+}
