@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PicoServiceService } from '../Service/pico-service.service';
+import { PicoServiceService } from 'src/app/Service/pico-service.service';
 
 @Component({
   selector: 'app-pico',

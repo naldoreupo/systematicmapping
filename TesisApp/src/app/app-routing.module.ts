@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { PicoComponent } from './pico/pico.component';
+import { PapersComponent } from './components/papers/papers.component';
+import { PicoComponent } from './components/pico/pico.component';
 
 
 const routes: Routes = [  
-  { path: '', component: PicoComponent }];
+  { path: '', component:PapersComponent } ,
+  { path: 'SearchString', component: PicoComponent }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -1,0 +1,117 @@
+<mat-accordion>
+  <mat-expansion-panel  [expanded]="true">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        List of papers {{count}}
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-card-header>
+      <mat-card-title>       
+      <form class="example-form">
+        <mat-form-field class="example-full-width">
+          <mat-label>Title </mat-label>
+          <input matInput placeholder="title"  [(ngModel)] ="paper.title" name='title' (keyup.enter)='getPapers()' style="margin:1rem;">
+        </mat-form-field>
+      </form>
+
+          <select  [(ngModel)] ="ce1" style="height:2rem;" (change)="getPapers()" >
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+            <option value="all" selected>All</option>
+          </select>
+        <mat-label>ce1 - Publicaciones a partir del año 2015</mat-label>
+        <br>
+          <select  [(ngModel)] ="ce2" style="height:2rem;"  >
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+            <option value="all" selected>All</option>
+          </select>
+        <mat-label>ce2 - No Journals, Conferencias, Revistas Indexadas, Bases de Datos digitales.</mat-label>
+        <br>
+        <select  [(ngModel)] ="ce3" style="height:2rem;"  >
+          <option value="true">Yes</option>
+          <option value="false">No</option>
+          <option value="all" selected>All</option>
+        </select>
+      <mat-label>ce3 - No serán considerados los estudios terciarios ni los resúmenes de conferencias.</mat-label>
+      <br>
+      <select  [(ngModel)] ="ce4" style="height:2rem;"  >
+        <option value="true">Yes</option>
+        <option value="false">No</option>
+        <option value="all" selected>All</option>
+      </select>
+    <mat-label>ce4 - contenido sea irrelevante o esté fuera del contexto de la MSL.</mat-label>
+    <br>
+    <select  [(ngModel)] ="ce5" style="height:2rem;"  >
+      <option value="true">Yes</option>
+      <option value="false">No</option>
+      <option value="all" selected>All</option>
+    </select>
+  <mat-label>ce5 - únicamente la aplicación de una arquitectura de software.</mat-label>
+  <br>
+  <select  [(ngModel)] ="ce6" style="height:2rem;"  >
+    <option value="true">Yes</option>
+    <option value="false">No</option>
+    <option value="all" selected>All</option>
+  </select>
+<mat-label>ce6 - únicamente la aplicación de una práctica ági.</mat-label>
+<br>
+<select  [(ngModel)] ="ce7" style="height:2rem;"  >
+  <option value="true">Yes</option>
+  <option value="false">No</option>
+  <option value="all" selected>All</option>
+</select>
+<mat-label>ce7 - El texto completo no es accesible.</mat-label>
+<br>
+<select  [(ngModel)] ="ce8" style="height:2rem;"  >
+  <option value="true">Yes</option>
+  <option value="false">No</option>
+  <option value="all" selected>All</option>
+</select>
+<mat-label>ce8 - Se excluyen artículos duplicados sobre el mismo estudio.</mat-label>
+<br>
+
+
+
+       </mat-card-title>
+    </mat-card-header>
+
+    <mat-divider></mat-divider>
+    <mat-card-content>
+
+            <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+              <ng-container matColumnDef="identifier">
+                <th mat-header-cell *matHeaderCellDef> Id </th>
+                <td mat-cell *matCellDef="let element"> {{element.identifier}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="source">
+                <th mat-header-cell *matHeaderCellDef> Source </th>
+                <td mat-cell *matCellDef="let element"> {{element.source}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="lastUpdate">
+                <th mat-header-cell *matHeaderCellDef> Last Update </th>
+                <td mat-cell *matCellDef="let element"> {{element.lastUpdate  | date:'short' }} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="title">
+                <th mat-header-cell *matHeaderCellDef> Title </th>
+                <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+              </ng-container>
+              
+              <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef> Actions </th>
+                <td mat-cell *matCellDef="let element">
+                   <button  mat-raised-button  (click)="openDialog(element)">edit</button >
+                </td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </mat-table> 
+ 
+</mat-card-content>
+</mat-expansion-panel>
+</mat-accordion>

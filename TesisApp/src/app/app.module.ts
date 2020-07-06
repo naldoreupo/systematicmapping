@@ -5,14 +5,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-import { PicoComponent } from './pico/pico.component';
 import { MaterialModule } from './material/material.module';
 import { FormsModule } from '@angular/forms';
+import { PicoComponent } from './components/pico/pico.component';
+import { PapersComponent } from './components/papers/papers.component';
+import { PaperEditComponent } from './components/papers/paper-edit/paper-edit.component';
 
 @NgModule({
    declarations: [
       AppComponent,
-      PicoComponent
+      PicoComponent,
+      PapersComponent,
+      PaperEditComponent
    ],
    imports: [
       BrowserModule,

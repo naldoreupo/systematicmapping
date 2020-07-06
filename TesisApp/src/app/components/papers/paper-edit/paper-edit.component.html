@@ -1,0 +1,33 @@
+<mat-accordion>
+  <mat-expansion-panel  [expanded]="true">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{title}}
+      </mat-panel-title>
+      <mat-panel-description>
+        {{paper.title}}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>{{paper.abstract}}</p>
+  </mat-expansion-panel>
+
+<mat-checkbox  [(ngModel)] ="paper.ce1" (change)='changeCriterio()'>CE1 - Menores 2015</mat-checkbox> 
+<br/>
+<mat-checkbox  [(ngModel)] ="paper.ce2" (change)='changeCriterio()'>CE2 - No Journals, Conferencias, Revistas Indexadas, Bases de Datos digitale</mat-checkbox> 
+<br/>
+<mat-checkbox  [(ngModel)] ="paper.ce3" (change)='changeCriterio()'>CE3 - No serán considerados los estudios terciarios ni los resúmenes de conferencias</mat-checkbox> 
+<br/>
+<mat-checkbox  [(ngModel)] ="paper.ce4" (change)='changeCriterio()'>CE4 - cuyo contenido sea irrelevante</mat-checkbox> 
+<br/>
+<mat-checkbox  [(ngModel)] ="paper.ce5" (change)='changeCriterio()'>CE5 - Únicamente la aplicación de una arquitectura de software</mat-checkbox> 
+<br/>
+<mat-checkbox  [(ngModel)] ="paper.ce6" (change)='changeCriterio()'>CE6 - únicamente la aplicación de una práctica ágil </mat-checkbox> 
+<br/>
+<mat-checkbox  [(ngModel)] ="paper.ce7" (change)='changeCriterio()'>CE7 - no es accesible </mat-checkbox> 
+<br/>
+<mat-checkbox  [(ngModel)] ="paper.ce8" (change)='changeCriterio()'>CE8 - Duplicados</mat-checkbox> 
+
+
+<div mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="data.id" cdkFocusInitial>Ok</button>
+</div>
